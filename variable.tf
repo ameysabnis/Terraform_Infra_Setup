@@ -3,6 +3,16 @@ variable "aws_region" {
        default     = "us-east-1" 
 }
 
+variable "access_key" {
+	description =" Access key for AWS EC2 instance"
+	default = "AKIA5S7HKNOFBZUJLC3Y"
+}
+
+variable "secret_key" {
+	description = "Secret key for AWS EC2 instance"
+	default = "OBhk4/PttKwTxTPoVSowH041YtykrK3pmqcbpWM5"
+}
+
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
     default     =  "Devops_Terraform_Key" 
