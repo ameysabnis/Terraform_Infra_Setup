@@ -1,1 +1,14 @@
 ami-0c4f7023847b90238
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee
+/usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]
+https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install fontconfig openjdk-11-jre
+sudo apt-get install -y net-tools
+wget https://pkg.jenkins.io/debian-stable/binary/jenkins_2.332.3_all.deb
+sudo dpkg -i jenkins_2.332.3_all.deb
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
